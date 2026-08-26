@@ -1,0 +1,134 @@
+body {
+  background-color: lightblue;
+}
+
+h1, h2, h3 {
+  font-family: 'Electrolize', monospace;
+  font-weight: 400;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+p {
+  font-family: 'Electrolize', monospace;
+  font-size: 20px;
+  text-align: center;
+}
+.centered-container {
+  display: flex;          
+  justify-content: center; 
+  align-items: center;    
+  height: 30vh;         
+  background-color: white;
+}
+@keyframes myAnimation {
+  0%   {background-color: lavender;}
+  25%  {background-color: MistyRose;}
+  50%  {background-color: lightblue;}
+  100% {background-color: lavender;}
+}
+
+.centered-item {
+  padding: 20px;
+  background-color: lavender;
+  font-family: monospace;
+  font-size: 20px;
+  text-align: center;
+  align-content: center;
+  width: 150px;
+  height: 150px;
+  animation-name: myAnimation;
+  animation-duration: 10s;
+  border-radius: 8px;
+}
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;    
+  padding: 20px;
+}
+
+.card {
+  flex: 1 1 250px;
+  background: lavender;
+  border: 20px solid white;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.navbar {
+    font-family: 'Electrolize', monospace !important;
+}
+
+@keyframes typing {
+
+  0.0000%, 22.2222% { content: ""; }
+  1.8519%, 20.3704% { content: "M"; }
+  3.7037%, 18.5185% { content: "Me"; }
+  5.5556%, 16.6667% { content: "Mer"; }
+
+  27.7778%, 94.4444% { content: ""; }
+  29.6296%, 92.5926% { content: "u"; }
+  31.4815%, 90.7407% { content: "un"; }
+  33.3333%, 88.8889% { content: "una"; }
+  35.1852%, 87.0370% { content: "una "; }
+  37.0370%, 85.1852% { content: "una e"; }
+  38.8889%, 83.3333% { content: "una es"; }
+  40.7407%, 81.4815% { content: "una est"; }
+  42.5926%, 79.6296% { content: "una estu"; }
+  44.4444%, 77.7778% { content: "una estud"; }
+  46.2963%, 75.9259% { content: "una estudi"; }
+  48.1481%, 74.0741% { content: "una estudia"; }
+  50.0000%, 72.2222% { content: "una estudian"; }
+  51.8519%, 70.3704% { content: "una estudiant"; }
+  53.7037%, 68.5185% { content: "una estudiante"; }
+
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+
+  @keyframes sequencePopup {
+    0% { content: "Mer"; }
+    50% { content: "una estudiante"; }
+  }
+
+  .typewriter::before {
+    content: "Mer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+
