@@ -1,64 +1,99 @@
-body {
-  background-color: lightblue;
+:root, body {
+  --bs-body-font-family: 'Electrolize', monospace !important;
+  --main-background: lightblue;
+  font-family: 'Electrolize', monospace !important;
 }
 
-h1, h2, h3 {
-  font-family: 'Electrolize', monospace;
+
+h1 {
   font-weight: 400;
   color: white;
+  font-size: 75px;
+  text-align: center;
+}
+
+h2, h3 {
+  font-weight: 400;
+  color: black;
   font-size: 40px;
   text-align: center;
 }
 
+h4 {
+  font-weight: 400;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+  background-color: white;
+}
+
 p {
-  font-family: 'Electrolize', monospace;
   font-size: 20px;
   text-align: center;
 }
+
+
+body {
+  background-color: var(--main-background);
+}
+
+footer {
+  background-color: lavender
+}
+
+.spaced-box {
+  margin-bottom: 20px; 
+}
+
 .centered-container {
   display: flex;          
-  justify-content: space-between;
-  align-items: center;    
-  height: 30vh;         
+  justify-content: center;
+  align-items: space-between;    
+  height: 30vh;
   background-color: white;
-}
-@keyframes myAnimation {
-  0%   {background-color: lavender;}
-  25%  {background-color: MistyRose;}
-  50%  {background-color: lightblue;}
-  100% {background-color: lavender;}
+  gap: 15px;
 }
 
 .centered-item {
-  padding: 20px;
   background-color: lavender;
-  font-family: monospace;
   font-size: 20px;
   text-align: center;
   align-content: center;
-  width: 150px;
-  height: 150px;
-  animation-name: myAnimation;
-  animation-duration: 10s;
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
 }
+
+
 .card-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;    
   padding: 20px;
+  height: 500px;
+  align-items: stretch;
+  justify-content: center;
 }
 
 .card {
-  flex: 1 1 250px;
-  background: lavender;
+  display: flex;
+  vertical-align: top;
+  flex-direction: column;
+  background: var(--main-background);
   border: 20px solid white;
-  padding: 20px;
   border-radius: 6px;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  flex: 1; 
+  height: 100%;
+  transition: flex 0.3s ease;
 }
 
-.navbar {
-    font-family: 'Electrolize', monospace !important;
+.card:hover, .card.active {
+  flex: 1.5;
+  background-color: lavender;
 }
 
 @keyframes typing {
@@ -106,13 +141,6 @@ p {
   animation: blink 0.5s linear infinite;
 }
 
-.typewriter.thick::after {
-  border-right: 1ch solid var(--caret);
-}
-
-.typewriter.nocaret::after {
-  border-right: 0;
-}
 
 
 @media (prefers-reduced-motion) {
