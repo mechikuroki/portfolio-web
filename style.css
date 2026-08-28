@@ -1,30 +1,41 @@
 :root, body {
   --bs-body-font-family: 'Electrolize', monospace !important;
   --main-background: lightblue;
+  --text-color: black;
+  --accent-color-fun: lavender;
+  --accent-color-basic: white;
   font-family: 'Electrolize', monospace !important;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-background: gray;
+    --text-color: black;
+    --accent-color-fun: lightgray;
+    --accent-color-basic: white;
+  }
+}
 
 h1 {
   font-weight: 400;
-  color: white;
+  color: var(--accent-color-basic);
   font-size: 75px;
   text-align: center;
 }
 
 h2, h3 {
   font-weight: 400;
-  color: black;
+  color: var(--text-color);
   font-size: 40px;
   text-align: center;
 }
 
 h4 {
   font-weight: 400;
-  color: black;
+  color: var(--text-color);
   font-size: 30px;
   text-align: center;
-  background-color: white;
+  background-color: var(--accent-color-basic);
 }
 
 p {
@@ -38,11 +49,15 @@ body {
 }
 
 footer {
-  background-color: lavender
+  background-color: var(--accent-color-fun)
 }
 
 .spaced-box {
   margin-bottom: 20px; 
+}
+
+.centered-link {
+  text-align: center;
 }
 
 .centered-container {
@@ -50,12 +65,12 @@ footer {
   justify-content: center;
   align-items: space-between;    
   height: 30vh;
-  background-color: white;
+  background-color: var(--accent-color-basic);
   gap: 15px;
 }
 
 .centered-item {
-  background-color: lavender;
+  background-color: var(--accent-color-fun);
   font-size: 20px;
   text-align: center;
   align-content: center;
@@ -80,7 +95,7 @@ footer {
   vertical-align: top;
   flex-direction: column;
   background: var(--main-background);
-  border: 20px solid white;
+  border: 20px solid var(--accent-color-basic);
   border-radius: 6px;
   padding: 20px;
   align-items: center;
@@ -93,7 +108,7 @@ footer {
 
 .card:hover, .card.active {
   flex: 1.5;
-  background-color: lavender;
+  background-color: var(--accent-color-fun);
 }
 
 @keyframes typing {
