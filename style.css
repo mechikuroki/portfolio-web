@@ -1,20 +1,20 @@
 :root, body {
-  --bs-body-font-family: 'Electrolize', monospace !important;
-  --main-background: lightblue;
-  --text-color: black;
-  --accent-color: lavender;
-  --accent-color-2: lavender;
-  --accent-color-basic: white;
-  font-family: 'Electrolize', monospace !important;
+    font-family: 'Electrolize', monospace !important;
+    --bs-body-font-family: 'Electrolize', monospace !important;
+    --main-background: lightblue;
+    --text-color: black;
+    --accent-color: lavender;
+    --accent-color-2: lavender;
+    --accent-color-basic: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --main-background: #121212;
-    --text-color: #f8f9fa;
-    --accent-color: #2b2b36;
-    --accent-color-2: #1F4E5B;
-    --accent-color-basic: #1e1e1e;
+:has(#mode_dark:checked) {
+  :root, body {
+    --main-background: #121820 !important;
+    --text-color: #E0E6ED !important;
+    --accent-color: #7B5EA7 !important;
+    --accent-color-2: #4A5D6E !important;
+    --accent-color-basic: #1A2332 !important;
   }
 
   .github-icon {
@@ -38,9 +38,46 @@
   }
 }
 
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-toggle label {
+    width: 40px; height: 40px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+label[for="mode_light"] { display: none; }
+label[for="mode_dark"] { display: grid; }
+
+:root:has(#mode_dark:checked) label[for="mode_light"] {
+   display: grid;
+}
+:root:has(#mode_dark:checked) label[for="mode_dark"] {
+   display: none;
+}
+:root:has(#mode_light:checked) label[for="mode_light"] {
+   display: none;
+}
+:root:has(#mode_light:checked) label[for="mode_dark"] {
+   display: grid;
+}
+
 h1 {
   font-weight: 400;
-  color: var(--accent-color-basic);
+  color: var(--text-color);
   font-size: clamp(2.5rem, 6vw, 4.75rem);
   text-align: center;
   padding: 20px 10px;
@@ -67,6 +104,7 @@ p {
   font-size: 1.25rem;
   text-align: center;
   padding: 10px;
+  color: var(--text-color);
 }
 
 body {
@@ -154,6 +192,10 @@ footer a {
 .card:hover, .card.active {
   transform: translateY(-5px);
   background-color: var(--accent-color-2) !important;
+}
+
+.custom-navbar {
+  background-color: var(--accent-color-basic) !important;
 }
 
 @keyframes typing {
