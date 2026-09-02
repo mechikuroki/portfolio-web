@@ -1,8 +1,8 @@
-#¿De qué es el proyecto? 
+# ¿De qué es el proyecto? 
 
 El proyecto consiste en el portfolio web que pidieron. Tiene links a 2 de mis proyectos, y a mi Github. Tiene una breve descripción de mis habiidades/sobre mi.
 
-#Bitácora de investigación
+# Bitácora de investigación
 
 En la primera clase tuve que fijarme como funcionaba/como era Flexbox, agregar una Google Font y la animación para "escribir" del título en CSS.
 
